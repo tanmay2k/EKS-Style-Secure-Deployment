@@ -19,6 +19,9 @@ spec:
         image: hashicorp/http-echo
         args:
         - "-text=Hello from data-service"
+        envFrom:
+        - secretRef:
+            name: minio-creds
         ports:
         - containerPort: 5678
         livenessProbe:
